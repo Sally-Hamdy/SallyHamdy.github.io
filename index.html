@@ -1,621 +1,439 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Salsabeel Hamdy Profile</title>
-  <link rel="stylesheet" href="./style.css">
-
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="https://i.postimg.cc/9fqYVvxh/logo.png" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salsabeel Hamdy — Social Media & Content Creator</title>
+<meta name="description" content="Salsabeel Hamdy — Social Media Coordinator, Content Creator & AI Video Creator based in Sharjah, UAE.">
+<link rel="icon" href="sally.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0614;
+  --bg2:#120a20;
+  --card:rgba(255,255,255,.045);
+  --card-border:rgba(255,255,255,.09);
+  --text:#f2eefb;
+  --muted:#a99fc2;
+  --pink:#ff4ecd;
+  --orange:#ffb347;
+  --violet:#7b5cff;
+  --grad:linear-gradient(90deg,var(--pink),var(--orange));
+  --grad2:linear-gradient(135deg,var(--violet),var(--pink));
+  --radius:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;line-height:1.65;overflow-x:hidden}
+h1,h2,h3,.brandfont{font-family:'Syne',sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--pink);color:#fff}
+
+/* animated background blobs */
+.blobs{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.35;animation:float 18s ease-in-out infinite alternate}
+.blob.b1{width:520px;height:520px;background:#7b2cff;top:-160px;left:-120px}
+.blob.b2{width:460px;height:460px;background:#ff2fa0;bottom:-140px;right:-100px;animation-delay:-6s}
+.blob.b3{width:380px;height:380px;background:#ff9d2f;top:38%;left:55%;opacity:.18;animation-delay:-12s}
+@keyframes float{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,-50px) scale(1.15)}}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 6vw;background:rgba(11,6,20,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.25rem;letter-spacing:.5px}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.navlinks{display:flex;gap:28px;font-size:.9rem}
+.navlinks a{color:var(--muted);transition:color .25s}
+.navlinks a:hover{color:#fff}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+@media(max-width:820px){
+  .navlinks{position:fixed;top:60px;right:0;background:rgba(15,8,28,.97);flex-direction:column;padding:26px 40px;border-radius:0 0 0 22px;transform:translateX(110%);transition:transform .3s;border:1px solid rgba(255,255,255,.07)}
+  .navlinks.open{transform:none}
+  .burger{display:block}
+}
+
+section{padding:110px 6vw 40px;max-width:1200px;margin:auto}
+.kicker{display:inline-block;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:14px;font-weight:600}
+h2.title{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-bottom:34px}
+h2.title em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;gap:6vw;flex-wrap:wrap;padding-top:120px}
+.hero-text{flex:1 1 460px}
+.hero-text h1{font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:800;line-height:1.08;margin:14px 0 20px}
+.hero-text h1 span{background:linear-gradient(90deg,var(--pink),var(--orange),var(--violet));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero-text p.lead{color:var(--muted);max-width:520px;font-size:1.05rem}
+.cta-row{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:14px 30px;border-radius:999px;font-weight:600;font-size:.95rem;transition:transform .25s,box-shadow .25s;display:inline-block}
+.btn-grad{background:var(--grad);color:#1a0b14;box-shadow:0 8px 30px rgba(255,78,205,.35)}
+.btn-grad:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,78,205,.5)}
+.btn-ghost{border:1px solid rgba(255,255,255,.25)}
+.btn-ghost:hover{border-color:var(--pink);color:var(--pink);transform:translateY(-3px)}
+.hero-photo{flex:0 0 auto;position:relative;margin:auto}
+.hero-photo .frame{width:min(330px,74vw);aspect-ratio:4/5;border-radius:26px;padding:1px;background:linear-gradient(160deg,rgba(255,255,255,.28),rgba(255,255,255,.05) 40%,rgba(255,78,205,.35));position:relative;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.hero-photo .frame::before{content:"";position:absolute;inset:0;border-radius:26px;background:var(--grad2);filter:blur(46px);opacity:.28;z-index:-1}
+.hero-photo .frame::after{content:"";position:absolute;top:18px;left:18px;right:-14px;bottom:-14px;border:1px solid rgba(255,255,255,.14);border-radius:26px;z-index:-1}
+.hero-photo .frame img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:25px;filter:saturate(1.05) contrast(1.03)}
+.badge{position:absolute;background:rgba(20,10,35,.85);backdrop-filter:blur(8px);border:1px solid var(--card-border);padding:10px 18px;border-radius:14px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.badge.b-top{top:6%;right:-8%}
+.badge.b-bot{bottom:8%;left:-10%}
+@media(max-width:600px){.badge{display:none}}
+.stats{display:flex;gap:44px;margin-top:48px;flex-wrap:wrap}
+.stat b{font-family:'Syne',sans-serif;font-size:2rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat small{display:block;color:var(--muted);font-size:.82rem}
+
+/* marquee */
+.marquee{overflow:hidden;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:22px 0;margin-top:30px}
+.marquee-track{display:flex;gap:60px;width:max-content;animation:scroll 26s linear infinite}
+.marquee-track span{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:rgba(255,255,255,.45);white-space:nowrap}
+.marquee-track span i{color:var(--pink);font-style:normal;margin-right:14px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* services */
+.grid{display:grid;gap:22px}
+.services{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:30px 26px;transition:transform .3s,border-color .3s,background .3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,78,205,.45)}
+.card .icon{width:52px;height:52px;border-radius:14px;background:var(--grad2);display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+.card h3{font-size:1.1rem;margin-bottom:10px}
+.card p{color:var(--muted);font-size:.9rem}
+
+/* about */
+.about-wrap{display:flex;gap:6vw;align-items:flex-start;flex-wrap:wrap}
+.about-wrap>div{flex:1 1 380px}
+.about-wrap p{color:var(--muted);margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{border:1px solid var(--card-border);background:var(--card);border-radius:999px;padding:8px 18px;font-size:.82rem}
+.chip b{color:var(--orange)}
+
+/* clients */
+.clients{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.client{background:rgba(255,255,255,.94);border-radius:16px;display:grid;place-items:center;padding:20px;height:110px;transition:transform .3s,box-shadow .3s}
+.client:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(255,78,205,.25)}
+.client img{max-height:62px;max-width:85%;width:auto;object-fit:contain}
+.client.dark{background:#15101f;border:1px solid var(--card-border)}
+.client.dark img{max-height:86px;border-radius:10px}
+
+/* experience */
+.timeline{position:relative;margin-left:14px}
+.timeline::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2px;background:linear-gradient(var(--pink),var(--violet))}
+.t-item{position:relative;padding:0 0 36px 34px}
+.t-item::before{content:"";position:absolute;left:-7px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--pink)}
+.t-item h3{font-size:1.06rem}
+.t-item .when{color:var(--orange);font-size:.8rem;font-weight:600;letter-spacing:1px}
+.t-item p{color:var(--muted);font-size:.9rem;margin-top:6px;max-width:640px}
+.tag{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:1px;background:var(--grad);color:#1a0b14;border-radius:999px;padding:3px 12px;margin-left:10px;vertical-align:middle}
+
+/* portfolio */
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{background:var(--card);border:1px solid var(--card-border);color:var(--muted);padding:9px 22px;border-radius:999px;cursor:pointer;font-family:'Sora',sans-serif;font-size:.85rem;transition:all .25s}
+.filters button.active,.filters button:hover{background:var(--grad);color:#1a0b14;border-color:transparent;font-weight:600}
+.works{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.work{border-radius:var(--radius);overflow:hidden;position:relative;border:1px solid var(--card-border);aspect-ratio:4/3;background:#160c26}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.work:hover img{transform:scale(1.08)}
+.work .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,4,20,.92) 15%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;opacity:0;transition:opacity .35s}
+.work:hover .overlay{opacity:1}
+.work .overlay b{font-family:'Syne',sans-serif}
+.work .overlay small{color:var(--pink);font-size:.75rem;letter-spacing:1px;text-transform:uppercase}
+.work.hidden{display:none}
+
+/* videos */
+.videos{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.video-card{border-radius:var(--radius);border:1px solid var(--card-border);padding:26px;background:linear-gradient(160deg,rgba(123,92,255,.14),rgba(255,78,205,.08));position:relative;transition:transform .3s,border-color .3s}
+.video-card:hover{transform:translateY(-6px);border-color:rgba(255,179,71,.5)}
+.play{width:56px;height:56px;border-radius:50%;background:var(--grad);display:grid;place-items:center;margin-bottom:18px;font-size:1.2rem;color:#1a0b14}
+.video-card h3{margin-bottom:8px;font-size:1.05rem}
+.video-card p{color:var(--muted);font-size:.88rem;margin-bottom:16px}
+.video-card a{color:var(--orange);font-weight:600;font-size:.85rem}
+
+/* certs */
+.certs{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.cert{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:22px}
+.cert .icon{flex:0 0 44px;height:44px;border-radius:12px;background:var(--grad2);display:grid;place-items:center;font-size:1.2rem}
+.cert h3{font-size:.98rem}
+.cert small{color:var(--muted);font-size:.8rem}
+
+/* testimonial */
+.quote{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);padding:38px;max-width:760px;position:relative}
+.quote::before{content:"“";position:absolute;top:-30px;left:24px;font-size:6rem;font-family:'Syne',sans-serif;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.quote p{color:var(--muted);font-size:1rem}
+.quote footer{margin-top:18px;font-weight:600}
+.quote footer small{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
+
+/* contact */
+.contact-wrap{display:flex;gap:5vw;flex-wrap:wrap}
+.contact-wrap>div{flex:1 1 340px}
+.c-line{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.c-line .icon{width:46px;height:46px;border-radius:12px;background:var(--card);border:1px solid var(--card-border);display:grid;place-items:center;font-size:1.1rem}
+.c-line small{display:block;color:var(--muted);font-size:.75rem;letter-spacing:1px;text-transform:uppercase}
+.c-line a:hover{color:var(--pink)}
+form .row{display:flex;gap:14px;flex-wrap:wrap}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:15px 18px;color:#fff;font-family:'Sora',sans-serif;font-size:.92rem;margin-bottom:14px;outline:none;transition:border-color .25s}
+input:focus,textarea:focus{border-color:var(--pink)}
+form .row input{flex:1 1 200px}
+textarea{min-height:130px;resize:vertical}
+
+footer.site{padding:36px 6vw;text-align:center;color:var(--muted);font-size:.82rem;border-top:1px solid rgba(255,255,255,.06);margin-top:80px}
+footer.site b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
 </head>
 <body>
-    <main>
-        <aside class="sidebar " data-sidebar>
-            <div class="sidebar-info">
-                <figure class="avatar-box">
-                    <img src="sally.jpeg" alt="avatar" width="80">
-                </figure>
 
-                <div class="info-content">
-                    <h1 class="name" title="Richard Hanrick">Salsabeel Hamdy</h1>
-                    <p class="title">Designer & Content Creator</p>
-                </div>
+<div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 
-                <button class="info-more-btn" data-sidebar-btn>
-                    <span>Show Contacts</span>
-                    <ion-icon name="chevron-down"></ion-icon>
-                </button>
-            </div>
+<nav>
+  <div class="logo">Salsabeel<span>.</span></div>
+  <div class="navlinks" id="navlinks">
+    <a href="#about">About</a>
+    <a href="#clients">Clients</a>
+    <a href="#experience">Experience</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#videos">AI Videos</a>
+    <a href="#certs">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="burger" id="burger" aria-label="menu">☰</button>
+</nav>
 
-            <div class="sidebar-info-more">
-                <div class="separator"></div>
-
-                <ul class="contacts-list">
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="mail-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Email</p>
-
-                            <a href="salsabeel.h.mohamed60@gmail.com <salsabeel.h.mohamed60@gmail.com>" class="contact-link">  salsabeel.h.mohamed60@gmail.com <salsabeel.h.mohamed60@gmail.com>
-                            </a>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="phone-portrait-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Phone</p>
-
-                            <a href="tel:+971 50 229 5504" class="contact-link">+971 50 229 5504</a>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="calendar-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Birthday</p>
-
-                            <time datetime="1982-06-23">October 15, 2000</time>
-                        </div>
-                    </li>
-
-                    <li class="contact-item">
-                        <div class="icon-box">
-                            <ion-icon name="location-outline"></ion-icon>
-                        </div>
-
-                        <div class="contact-info">
-                            <p class="contact-title">Location</p>
-
-                            <address>Sharjah, UAE</address>
-                        </div>
-                    </li>
-                </ul>
-
-                <div class="separator"></div>
-            </div>
-        </aside>
-
-        <div class="main-content">
-            <nav class="navbar">
-                <ul class="navbar-list">
-                    <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Portfolio</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
-                </ul>
-            </nav>
-
-            <article class="about active" data-page="about">
-                <header>
-                    <h2 class="h2 article-title">About me</h2>
-                </header>
-
-               <section class="about-text">
-    <p>I'm a Social Media Coordinator and Content Creator with a passion for crafting engaging digital experiences. I specialize in developing creative strategies that enhance brand presence across social platforms.</p>
-    <p>My job is to create compelling content that connects with audiences and drives engagement. I manage social media campaigns, produce multimedia content, and ensure brand consistency across all channels. My goal is to tell your story in a way that is authentic, visually appealing, and tailored to your audience. I've helped numerous brands grow their online presence and build stronger connections with their communities.</p>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-text reveal">
+    <span class="kicker">Social Media · Content · AI Video</span>
+    <h1>Hi, I'm <span>Salsabeel Hamdy</span></h1>
+    <p class="lead">I help brands stand out with scroll-stopping content, smart social media strategy, and AI-powered video — turning followers into loyal customers.</p>
+    <div class="cta-row">
+      <a class="btn btn-grad" href="#portfolio">See My Work</a>
+      <a class="btn btn-ghost" href="#contact">Let's Talk</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="5">0</b>+<small>Years Experience</small></div>
+      <div class="stat"><b data-count="7">0</b><small>Brands Managed</small></div>
+      <div class="stat"><b data-count="4">0</b><small>Core Services</small></div>
+    </div>
+  </div>
+  <div class="hero-photo reveal">
+    <div class="frame"><img src="sally.jpeg" alt="Salsabeel Hamdy"></div>
+    <div class="badge b-top">✨ AI Video Creator</div>
+    <div class="badge b-bot">📍 Sharjah, UAE</div>
+  </div>
 </section>
 
-
-                <section class="service">
-                    <h3 class="h3 service-title">What I'm doing</h3>
-
-                    <ul class="service-list">
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/4389jZkP/icon-design.png" alt="icon" width="40">
-                            </div>
-
-                              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Content Creator</h4>
-                <p class="service-item-text">Creating engaging multimedia content tailored for social platforms, blogs, and digital campaigns to boost brand visibility and interaction.</p>
-            </div>
-                        </li>
-
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/ZqgqrqzG/icon-dev.png" alt="icon" width="40">
-                            </div>
-
-                            <div class="service-content-box">
-                <h4 class="h4 service-item-title">Social Media Coordinator</h4>
-                <p class="service-item-text">Planning and managing social media strategies, creating calendars, analyzing trends, and engaging communities across platforms.</p>
-            </div>
-                        </li>
-
-                        <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/xjLdzYxZ/icon-app.png" alt="icon" width="40">
-                            </div>
-
-                          <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web Design</h4>
-                <p class="service-item-text">Designing clean, modern, and responsive websites that are both visually appealing and user-focused.</p>
-            </div>
-                        </li>
-
-                      
-             <li class="service-item">
-                            <div class="service-icon-box">
-                                <img src="https://i.postimg.cc/0NL8zHpx/icon-photo.png" alt="icon" width="40">
-                            </div>
-
-                          <div class="service-content-box">
-                <h4 class="h4 service-item-title">Video Creator</h4>
-                <p class="service-item-text">Creating Innovative videos using AI tools</p>
-            </div>
-                        </li>
-                    </ul>
-                </section>
-
-                <div class="modal-container " data-modal-container>
-                    <div class="overlay " data-overlay></div>
-
-                    <section class="testimonials-modal">
-                        <button class="modal-close-btn" data-modal-close-btn><ion-icon name="close-outline"></ion-icon></button>
-
-                        <div class="modal-img-wrapper">
-                            <figure class="modal-avatar-box">
-                                <img src="https://i.postimg.cc/zGDHfn3G/avatar-1.png" alt="Daniel Lewis" width="80" data-modal-img>
-                            </figure>
-
-                            <img src="https://i.postimg.cc/mZ00RwX7/icon-quote.png" alt="quote icon">
-                        </div>
-
-                        <div class="modal-content">
-                            <h4 class="h3 modal-title" data-modal-title>Daniel Lewis</h4>
-                            <time datetime="2023-06-14">14 June, 2023</time>
-
-                            <div class="modal-text" data-modal-text>
-                                <p>Richard was hired to create a corporate identity. It's modern, clean and with a beautiful design that got a lot of praises from colleagues and visitors. We were very pleased with the work done. He has a lot of experience and is very concerned about the needs of client.</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <section class="clients">
-                    <h3 class="h3 clients-title">Clients</h3>
-
-                    <ul class="clients-list has-scrollbar">
-
-                        <li class="clients-item">
-                            <a href="https://dropshippingscout.com"><img src="drop-shipping.svg" alt="logo" style="width: 150px;"></a>
-                        </li>
-
-
-                        <li class="clients-item">
-                            <a href="https://bookbee.net"><img src="Book-Bee-1.png" alt="logo" style="width: 150px;"></a>
-                        </li>
-
-                        <li class="clients-item">
-                            <a href="https://www.facebook.com/share/1XCQhTProM/?mibextid=wwXIfr"><img src="tiara-bridal.jpg" alt="logo" style="width: 150px;"></a>
-                        </li>
-
-                        
-                    </ul>
-                </section>
-
-            </article>
-            
-            <article class="resume " data-page="resume">
-                <header>
-                    <h2 class="h2 article-title">Resume</h2>
-                </header>
-
-                <section class="timeline">
-                    <div class="title-wrapper">
-                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
-
-                        <h3 class="h3">Education</h3>
-                    </div>
-
-                   <ol class="timeline-list">
-    <li class="timeline-item">
-        <h4 class="h4 timeline-item-title">Bachelor of Science | Cairo University</h4>
-        <span>2018 - 2022</span>
-        <p class="timeline-text">
-            During my studies, I developed a strong foundation in digital communication, media production, and data analysis. I gained valuable experience in content strategy, visual storytelling, and audience engagement—skills that are essential for a career in social media coordination and content creation. My coursework also emphasized critical thinking, teamwork, and the ability to adapt messaging to various platforms and target audiences.
-        </p>
-    </li>
-</ol>
-
-                </section>
-
-                <section class="timeline">
-                    <div class="title-wrapper">
-                        <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
-                        <h3 class="h3">Experience</h3>
-                    </div>
-
-                    <ol class="timeline-list">
-                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Social Media Coordinator At TiaraBridal</h4>
-                            <span>2021 - 2023</span>
-                            <p class="timeline-text">I was responsbile for all social media channels including Linkedin, Facebook</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Social Media Coordinator At Tatweer Company</h4>
-                            <span>2022 - 2023</span>
-                            <p class="timeline-text">I was responsbile for all social media channels including Linkedin, Facebook</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Content Creator For DropShippingScout (Freelance)</h4>
-                            <span>2023 - 2024</span>
-                            <p class="timeline-text">I create and develop visual concepts that align with the project's goals and objectives, supervising the design process and managing timelines and budgets for design projects.</p>
-                        </li>
-
-                        <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title">Social Media Coordinator For Bookbee (Freelance)</h4>
-                            <span>2024 - Present</span>
-                            <p class="timeline-text">I create logos, color schemes and typography for a brand's identity. Also I develop graphics for websites, social media and digital ads with applications that enhance user experience.</p>
-                        </li>
-                    </ol>
-                </section>
-
-                <section class="skill">
-                    <h3 class="h3 skills-title">My Skills</h3>
-
-                    <ul class="skills-list content-card">
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Content Creator</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 90%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Social Media</h5>
-                                <data value="95">95%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 95%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Designs</h5>
-                                <data value="90">90%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 90%;"></div>
-                            </div>
-                        </li>
-
-                        <li class="skills-item">
-                            <div class="title-wrapper">
-                                <h5 class="h5">Videos</h5>
-                                <data value="80">80%</data>
-                            </div>
-
-                            <div class="skills-progress-bg">
-                                <div class="skills-progress-fill" style="width: 80%;"></div>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
-            </article>
-
-            <article class="portfolio " data-page="portfolio">
-                <header>
-                    <h2 class="h2 article-title">Portfolio</h2>
-                </header>
-
-                <section class="projects">
-                    <ul class="filter-list">
-                        <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
-                        <li class="filter-item"><button data-filter-btn>Web Design</button></li>
-                        <li class="filter-item"><button data-filter-btn>Applications</button></li>
-                        <li class="filter-item"><button data-filter-btn>Web Development</button></li>
-                    </ul>
-
-                    <div class="filter-select-box">
-                        <button class="filter-select " data-select>
-                            <div class="select-value" data-select-value>Select Category</div>
-
-                            <div class="select-icon">
-                                <ion-icon name="chevron-down"></ion-icon>
-                            </div>
-                        </button>
-
-                        <ul class="select-list">
-                            <li class="select-item"><button data-select-item>All</button></li>
-                            <li class="select-item"><button data-select-item>Web Design</button></li>
-                            <li class="select-item"><button data-select-item>Applications</button></li>
-                            <li class="select-item"><button data-select-item>Web Development</button></li>
-                        </ul>
-                    </div>
-
-                    <ul class="project-list">
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://dropshipping.com">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="Portfolio/dropshipping1.png" alt="Design" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Web Design</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://dropshipping.com">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="Portfolio/dropshipping2.png" alt="Design" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Web Design</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="https://dropshipping.com">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                   <img src="Portfolio/dropshipping3.png" alt="Design" loading="lazy">
-                                </figure>
-                                <h3 class="project-title">Web Design</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="applications">
-                            <a href="https://dropshipping.com">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="Portfolio/dropshipping4.png" alt="Design" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Web Design</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="https://bookbee.net/about">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="Portfolio/bookbee1.png" alt="Design" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Contenr Creator</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="https://bookbee.net/terms">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                   <img src="Portfolio/bookbee3.png" alt="Design" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Content Creator</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="https://www.facebook.com/photo/?fbid=1096624552506527&set=pcb.1096624625839853">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="Portfolio/tiara1.jpg" alt="summary" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Social Media</h3>
-                             </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="applications">
-                            <a href="https://www.facebook.com/photo?fbid=1096624589173190&set=pcb.1096624625839853">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="Portfolio/tiara2.jpg" alt="summary" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Social Media</h3>
-                             </a>
-                        </li>
-
-
-                        <li class="project-item active" data-filter-item data-category="applications">
-                            <a href="https://www.facebook.com/share/p/12GodF9Udim/">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-                                    <img src="Portfolio/bookbee4.png" alt="summary" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Social Media</h3>
-                             </a>
-                        </li>
- 
-                    </ul>
-                </section>
-            </article>
-
-            <article class="blog " data-page="blog">
-                <header>
-                    <h2 class="h2 article-title">Blog</h2>
-                </header>
-
-                <section class="blog-posts">
-                    <ul class="blog-posts-list">
-                        <li class="blog-post-item">
-                            <a href="https://dropshippingscout.com/blogs/shopify-dropshipping-in-the-uk">
-                                    <figure class="blog-banner-box">
-                                        <img src="Portfolio/blog1.jpg" alt="Design conferences in 2024" loading="lazy">
-                                    </figure>
-
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p class="blog-category">Content Creator</p>
-                                        <span class="dot"></span>
-                                        <time datetime="2025-05-13">2025-05-13</time>
-                                    </div>
-
-                                    <h3 class="h3 blog-item-title">Shopify Dropshipping in the UK: The Complete Guide for Beginners</h3>
-                                    
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="blog-post-item">
-                            <a href="https://dropshippingscout.com/blogs/dropshipping-in-the-uk">
-                                <figure class="blog-banner-box">
-                                    <img src="Portfolio/blog2.jpg" alt="Best fonts every designer" loading="lazy">
-                                </figure>
-
-
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p class="blog-category">Content Creator</p>
-                                        <span class="dot"></span>
-                                        <time datetime="2025-05-07">2025-05-07</time>
-                                    </div>
-
-                                    <h3 class="h3 blog-item-title">Dropshipping in the UK: How to Start, Grow, and Succeed</h3>
-                                 </div>
-                            </a>
-                        </li>
-
-                        <li class="blog-post-item">
-                            <a href="https://dropshippingscout.com/blogs/what-is-dropShipping">
-                                <figure class="blog-banner-box">
-                                    <img src="Portfolio/blog3.jpg" alt="Design digest #80" loading="lazy">
-                                </figure>
-
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p class="blog-category">Content Creator</p>
-                                        <span class="dot"></span>
-                                        <time datetime="2024-09-23">2024-09-23</time>
-                                    </div>
-
-                                    <h3 class="h3 blog-item-title">What is DropShipping?</h3>
-                                </div>
-                            </a>
-                        </li>
-
-
-                         <li class="blog-post-item">
-                            <a href="https://www.facebook.com/share/p/1LjQPEZuo5/">
-                                <figure class="blog-banner-box">
-                                    <img src="Portfolio/bookbee5.png" alt="Design digest #80" loading="lazy">
-                                </figure>
-
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <p class="blog-category">Content Creator</p>
-                                        <span class="dot"></span>
-                                        <time datetime="2024-09-23">2023-08-10</time>
-                                    </div>
-
-                                    <h3 class="h3 blog-item-title">من اصعب الرحلات والحروب  اللي هتخشها في حياتك هي رحلة الثانوية العامة </h3>
-                                </div>
-                            </a>
-                        </li>
-
-
-
-
-                      
-                    </ul>
-                </section>
-            </article>
-
-            <article class="contact " data-page="contact">
-                <header>
-                    <h2 class="h2 article-title">Contact</h2>
-                </header>
-
-                <section class="mapbox" data-mapbox>
-                    <figure>
-
-                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28853.71587279312!2d55.34059496718243!3d25.31379506867639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5b0a2f12169d%3A0xe8ee704998a44bd4!2sAl%20Mamzar%20-%20Sharjah!5e0!3m2!1sen!2sae!4v1747590399658!5m2!1sen!2sae" width="400" height="300" loading="lazy" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </figure>
-                </section>
-
-                <section class="contact-form">
-                    <h3 class="h3 form-title">Contact Form</h3>
-
-                    <form action="#" class="form" data-form>
-                        <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-                            <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
-                        </div>
-
-                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input=""></textarea>
-
-                        <button class="form-btn" type="submit" disabled data-form-btn>
-                            <ion-icon name="paper-plane"></ion-icon>
-                            <span>Send Message</span>
-                        </button>
-                    </form>
-                </section>
-            </article>
-        </div>
-    </main>
-
-    <script src="main.js"></script>
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><i>✦</i>LinSync Technologies</span><span><i>✦</i>Dupack</span><span><i>✦</i>Empack</span><span><i>✦</i>Bookbee</span><span><i>✦</i>DropShippingScout</span><span><i>✦</i>Tatweer</span><span><i>✦</i>TiaraBridal</span>
+    <span><i>✦</i>LinSync Technologies</span><span><i>✦</i>Dupack</span><span><i>✦</i>Empack</span><span><i>✦</i>Bookbee</span><span><i>✦</i>DropShippingScout</span><span><i>✦</i>Tatweer</span><span><i>✦</i>TiaraBridal</span>
+  </div>
+</div>
+
+<!-- ABOUT + SERVICES -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="reveal">
+      <span class="kicker">About Me</span>
+      <h2 class="title">Telling brand stories that <em>connect</em></h2>
+      <p>I'm a Social Media Coordinator and Content Creator passionate about crafting engaging digital experiences. I build creative strategies that grow brand presence, produce multimedia content that audiences love, and keep every channel consistent and on-brand.</p>
+      <p>From bridal fashion to packaging factories to tech companies, I've helped businesses across very different industries find their voice online — most recently producing AI-generated videos that give brands a cutting-edge look without a big production budget.</p>
+      <div class="chips">
+        <div class="chip"><b>95%</b> Social Media</div>
+        <div class="chip"><b>90%</b> Content Creation</div>
+        <div class="chip"><b>90%</b> Design</div>
+        <div class="chip"><b>85%</b> AI Video</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="grid services">
+        <div class="card"><div class="icon">📣</div><h3>Social Media Management</h3><p>Full channel management — strategy, calendars, community engagement, and analytics across all platforms.</p></div>
+        <div class="card"><div class="icon">🎨</div><h3>Content Creation</h3><p>Engaging multimedia content for social platforms, blogs, and campaigns that boosts visibility and interaction.</p></div>
+        <div class="card"><div class="icon">🤖</div><h3>AI Video Production</h3><p>Innovative promotional and product videos created with the latest AI tools — fast, modern, and eye-catching.</p></div>
+        <div class="card"><div class="icon">💻</div><h3>Web Design</h3><p>Clean, modern, responsive websites that are visually appealing and focused on the user.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<!-- NOTE: requires dupack.png, empack.png and linsync.png uploaded to the repo root -->
+<section id="clients">
+  <span class="kicker reveal">Clients</span>
+  <h2 class="title reveal">Brands I've <em>worked with</em></h2>
+  <div class="grid clients">
+    <a class="client reveal" href="dupack.ae" aria-label="Dupack — Dubai Packaging Industry"><img src="dupack.png" alt="Dupack — Dubai Packaging Industry"></a>
+    <a class="client reveal" href="empack.ae" aria-label="Empack"><img src="empack.png" alt="Empack"></a>
+    <a class="client dark reveal" href="linsync.ae" aria-label="LinSync Technologies"><img src="linsync.png" alt="LinSync Technologies"></a>
+    <a class="client reveal" href="https://dropshippingscout.com" target="_blank" rel="noopener"><img src="drop-shipping.svg" alt="DropShippingScout"></a>
+    <a class="client reveal" href="https://bookbee.net" target="_blank" rel="noopener"><img src="Book-Bee-1.png" alt="Bookbee"></a>
+    <a class="client reveal" href="https://www.facebook.com/share/1XCQhTProM/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="tiara-bridal.jpg" alt="TiaraBridal"></a>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <span class="kicker reveal">Experience</span>
+  <h2 class="title reveal">Where I've made an <em>impact</em></h2>
+  <div class="timeline">
+    <div class="t-item reveal">
+      <h3>Social Media Manager — LinSync Technologies<span class="tag">CURRENT</span></h3>
+      <span class="when">2025 — Present</span>
+      <p>Managing all media channels for a technology company — content strategy, publishing, and brand voice across platforms.</p>
+    </div>
+    <div class="t-item reveal">
+      <h3>Social Media Manager — Dupack &amp; Empack</h3>
+      <span class="when">2024 — 2025</span>
+      <p>Managed the social media channels of two packaging factories, building their B2B presence and producing standout AI-generated videos for their products and facilities.</p>
+    </div>
+    <div class="t-item reveal">
+      <h3>Social Media Coordinator — Bookbee <small>(Freelance)</small></h3>
+      <span class="when">2024 — Present</span>
+      <p>Brand identity work — logos, color schemes, typography — plus graphics for web, social media, and digital ads.</p>
+    </div>
+    <div class="t-item reveal">
+      <h3>Content Creator — DropShippingScout <small>(Freelance)</small></h3>
+      <span class="when">2023 — 2024</span>
+      <p>Developed visual concepts aligned with project goals, supervised the design process, and managed timelines and budgets.</p>
+    </div>
+    <div class="t-item reveal">
+      <h3>Social Media Coordinator — Tatweer Company</h3>
+      <span class="when">2022 — 2023</span>
+      <p>Responsible for all social media channels including LinkedIn and Facebook.</p>
+    </div>
+    <div class="t-item reveal">
+      <h3>Social Media Coordinator — TiaraBridal</h3>
+      <span class="when">2021 — 2023</span>
+      <p>Ran all social channels for a bridal fashion brand, growing engagement and keeping content on-trend.</p>
+    </div>
+  </div>
+  <div class="t-item reveal" style="padding-left:0;margin-top:10px">
+    <h3 style="margin-bottom:8px">🎓 Education</h3>
+    <span class="when">2018 — 2022</span>
+    <p><b>Bachelor of Science — Cairo University.</b> Strong foundation in digital communication, media production, and data analysis, with focus on content strategy, visual storytelling, and audience engagement.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <span class="kicker reveal">Portfolio</span>
+  <h2 class="title reveal">Selected <em>work</em></h2>
+  <div class="filters reveal">
+    <button class="active" data-f="all">All</button>
+    <button data-f="web">Web Design</button>
+    <button data-f="content">Content Creation</button>
+    <button data-f="social">Social Media</button>
+  </div>
+  <div class="grid works">
+    <a class="work reveal" data-c="web" href="https://dropshippingscout.com" target="_blank" rel="noopener"><img src="Portfolio/dropshipping1.png" alt="DropShippingScout website" loading="lazy"><div class="overlay"><small>Web Design</small><b>DropShippingScout</b></div></a>
+    <a class="work reveal" data-c="web" href="https://dropshippingscout.com" target="_blank" rel="noopener"><img src="Portfolio/dropshipping2.png" alt="DropShippingScout website" loading="lazy"><div class="overlay"><small>Web Design</small><b>DropShippingScout — Blog</b></div></a>
+    <a class="work reveal" data-c="web" href="https://dropshippingscout.com" target="_blank" rel="noopener"><img src="Portfolio/dropshipping3.png" alt="DropShippingScout website" loading="lazy"><div class="overlay"><small>Web Design</small><b>DropShippingScout — Tools</b></div></a>
+    <a class="work reveal" data-c="content" href="https://bookbee.net/about" target="_blank" rel="noopener"><img src="Portfolio/bookbee1.png" alt="Bookbee content" loading="lazy"><div class="overlay"><small>Content Creation</small><b>Bookbee — About</b></div></a>
+    <a class="work reveal" data-c="content" href="https://bookbee.net/terms" target="_blank" rel="noopener"><img src="Portfolio/bookbee2.png" alt="Bookbee content" loading="lazy"><div class="overlay"><small>Content Creation</small><b>Bookbee — Content</b></div></a>
+    <a class="work reveal" data-c="content" href="https://bookbee.net" target="_blank" rel="noopener"><img src="Portfolio/bookbee3.png" alt="Bookbee content" loading="lazy"><div class="overlay"><small>Content Creation</small><b>Bookbee — Web</b></div></a>
+    <a class="work reveal" data-c="social" href="https://www.facebook.com/photo/?fbid=1096624552506527&set=pcb.1096624625839853" target="_blank" rel="noopener"><img src="Portfolio/tiara1.jpg" alt="TiaraBridal social media" loading="lazy"><div class="overlay"><small>Social Media</small><b>TiaraBridal</b></div></a>
+    <a class="work reveal" data-c="social" href="https://www.facebook.com/photo?fbid=1096624589173190&set=pcb.1096624625839853" target="_blank" rel="noopener"><img src="Portfolio/tiara2.jpg" alt="TiaraBridal social media" loading="lazy"><div class="overlay"><small>Social Media</small><b>TiaraBridal — Campaign</b></div></a>
+    <a class="work reveal" data-c="social" href="https://www.facebook.com/share/p/12GodF9Udim/" target="_blank" rel="noopener"><img src="Portfolio/bookbee4.png" alt="Social media post" loading="lazy"><div class="overlay"><small>Social Media</small><b>Bookbee — Social</b></div></a>
+  </div>
+</section>
+
+<!-- AI VIDEOS -->
+<!-- TODO: Replace each href="#" below with the real video link (YouTube / Instagram / Facebook / Drive) -->
+<section id="videos">
+  <span class="kicker reveal">AI Videos</span>
+  <h2 class="title reveal">AI-powered <em>video creation</em></h2>
+  <div class="grid videos">
+    <div class="video-card reveal">
+      <div class="play">▶</div>
+      <h3>Dupack — Product Showcase</h3>
+      <p>AI-generated promotional video highlighting Dupack's packaging products and manufacturing quality.</p>
+      <!-- TODO: add Dupack video link here when available:
+      <a href="VIDEO_LINK" target="_blank" rel="noopener">Watch on Instagram →</a> -->
+    </div>
+    <div class="video-card reveal">
+      <div class="play">▶</div>
+      <h3>Empack — Brand Video</h3>
+      <p>Modern AI-crafted brand video bringing Empack's factory and products to life for social audiences.</p>
+      <a href="https://www.instagram.com/reel/DYB-Cx_o7QK/?igsh=MXE2dHZpbmF5ODV3bg%3D%3D" target="_blank" rel="noopener">Watch on Instagram →</a>
+    </div>
+    <div class="video-card reveal">
+      <div class="play">▶</div>
+      <h3>LinSync Technologies — Media</h3>
+      <p>Ongoing video content for LinSync's media channels, blending tech storytelling with AI production.</p>
+      <a href="https://www.instagram.com/reel/Da8Eb_GhvUW/?igsh=MTlvYmN3djdkeTR5cw%3D%3D" target="_blank" rel="noopener">Watch on Instagram →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <span class="kicker reveal">Certifications</span>
+  <h2 class="title reveal">Always <em>learning</em></h2>
+  <p class="reveal" style="color:var(--muted);margin:-14px 0 28px;max-width:640px">Currently pursuing the <b style="color:var(--text)">Meta Social Media Marketing Professional Certificate</b> on Coursera — a 6-course program by Meta.</p>
+  <div class="grid certs">
+    <div class="cert reveal"><div class="icon">✅</div><div><h3>Social Media Management</h3><small>Meta · Coursera — Completed</small></div></div>
+    <div class="cert reveal"><div class="icon">🎓</div><div><h3>Fundamentals of Social Media Advertising</h3><small>Meta · Coursera — In progress</small></div></div>
+    <div class="cert reveal"><div class="icon">🎓</div><div><h3>Advertising with Meta</h3><small>Meta · Coursera — In progress</small></div></div>
+    <div class="cert reveal"><div class="icon">🎓</div><div><h3>Measure &amp; Optimize Social Media Marketing Campaigns</h3><small>Meta · Coursera — In progress</small></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonial">
+  <span class="kicker reveal">Testimonial</span>
+  <h2 class="title reveal">What clients <em>say</em></h2>
+  <div class="quote reveal">
+    <p>Working with Salsabeel transformed our social presence. Her content is modern, on-brand, and consistently gets praise from our clients and visitors. She truly cares about understanding what the client needs.</p>
+    <footer>Daniel Lewis<small>Client — June 2023</small></footer>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="kicker reveal">Contact</span>
+  <h2 class="title reveal">Let's create something <em>amazing</em></h2>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="c-line"><div class="icon">📧</div><div><small>Email</small><a href="mailto:salsabeel.h.mohamed60@gmail.com">salsabeel.h.mohamed60@gmail.com</a></div></div>
+      <div class="c-line"><div class="icon">📱</div><div><small>Phone / WhatsApp</small><a href="tel:+971502295504">+971 50 229 5504</a></div></div>
+      <div class="c-line"><div class="icon">📍</div><div><small>Location</small><span>Al Mamzar, Sharjah — UAE</span></div></div>
+    </div>
+    <div class="reveal">
+      <form action="mailto:salsabeel.h.mohamed60@gmail.com" method="post" enctype="text/plain">
+        <div class="row"><input type="text" name="name" placeholder="Your name" required><input type="email" name="email" placeholder="Your email" required></div>
+        <textarea name="message" placeholder="Tell me about your project…" required></textarea>
+        <button class="btn btn-grad" type="submit" style="border:0;cursor:pointer;font-family:'Sora',sans-serif">Send Message ✦</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">© <span id="year"></span> <b>Salsabeel Hamdy</b> — Social Media · Content · AI Video</footer>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+// mobile nav
+const burger=document.getElementById('burger'),nav=document.getElementById('navlinks');
+burger.onclick=()=>nav.classList.toggle('open');
+nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;const el=e.target,end=+el.dataset.count;let n=0;
+  const t=setInterval(()=>{n++;el.textContent=n;if(n>=end)clearInterval(t)},1400/end);cio.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// portfolio filter
+document.querySelectorAll('.filters button').forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');const f=btn.dataset.f;
+  document.querySelectorAll('.work').forEach(w=>w.classList.toggle('hidden',f!=='all'&&w.dataset.c!==f));
+});
+</script>
 </body>
 </html>
